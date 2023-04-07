@@ -146,8 +146,6 @@ You can deploy this project using:
 
 ## 👥 Author <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
 👤 **Matee Safi**
 
 - GitHub: [@githubhandle](https://github.com/matee-safi)

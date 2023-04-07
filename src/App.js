@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import Books from "./components/Books";
-import Catagories from "./components/Catagories";
-import { FaUser } from "react-icons/fa";
+import { FaUser } from 'react-icons/fa';
+import Books from './components/Books';
+import Catagories from './components/Catagories';
 
 function App() {
   return (
