@@ -34,7 +34,7 @@ const Books = () => {
         <h2>Add new book</h2>
         <form>
           <input type="text" placeholder="Book title" />
-          <select name="catagory" id="catagory">
+          <select name="category" id="category">
             <option value="Action">Action</option>
             <option value="Science fiction">Science fiction</option>
             <option value="Economy">Economy</option>
