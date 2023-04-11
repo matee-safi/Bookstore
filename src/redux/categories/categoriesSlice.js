@@ -1,13 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
-import categories from '../../components/Categories';
 
 const initialState = {
-  categories,
+  categories: [],
 };
 
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
+  reducers: {
+    checkStatus: (state) => ({
+      ...state,
+      categories: ['Under construction'],
+    }),
+  },
 });
 
 export default categoriesSlice.reducer;

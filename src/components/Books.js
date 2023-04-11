@@ -1,25 +1,10 @@
-const Books = () => {
-  const books = [
-    {
-      id: 1,
-      title: 'Lord of the Rings',
-      author: 'John Ronald Reuel Tolkien',
-    },
-    {
-      id: 2,
-      title: 'Game of thrones',
-      author: 'George R.R. Martin',
-    },
-    {
-      id: 3,
-      title: 'Harry Potter',
-      author: 'JK Rowling',
-    },
-  ];
+const books = () => {
+  const books = [];
+
   return (
     <>
       <div className="book-list">
-        { books.map((book) => (
+        { books && books.map((book) => (
           <p key={book.id}>
             {book.title}
             {' '}
@@ -46,4 +31,4 @@ const Books = () => {
   );
 };
 
-export default Books;
+export default books;
