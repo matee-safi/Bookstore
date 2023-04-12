@@ -1,20 +1,11 @@
-import { useSelector } from 'react-redux';
-// import { addBook } from '../redux/books/booksSlice';
+const books = () => {
+  const books = [];
 
-const Books = () => {
-  const books = useSelector((state) => state.books.books);
-  // const dispatch = useDispatch();
-  // const handleBookSubmit = (e) => {
-  //   e.preventDefault();
-  //   const title = e.target.previousElementSibling.previousElementSibling.value;
-  //   const category = e.target.previousElementSibling.value;
-  //   dispatch(addBook({ title, category }));
-  // };
   return (
     <>
       <div className="book-list">
         { books && books.map((book) => (
-          <p key={book.item_id}>
+          <p key={book.id}>
             {book.title}
             {' '}
             written by
@@ -27,9 +18,8 @@ const Books = () => {
       <div className="add-book">
         <h2>Add new book</h2>
         <form>
-          <input type="text" placeholder="Book title" required />
-          <select name="category" id="category" defaultValue="">
-            <option value="" disabled>Category</option>
+          <input type="text" placeholder="Book title" />
+          <select name="category" id="category">
             <option value="Action">Action</option>
             <option value="Science fiction">Science fiction</option>
             <option value="Economy">Economy</option>
@@ -41,4 +31,4 @@ const Books = () => {
   );
 };
 
-export default Books;
+export default books;
