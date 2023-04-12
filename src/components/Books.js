@@ -1,15 +1,18 @@
-import { useSelector } from 'react-redux';
-// import { addBook } from '../redux/books/booksSlice';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBook, addBook } from '../redux/books/booksSlice';
 
 const Books = () => {
   const books = useSelector((state) => state.books.books);
-  // const dispatch = useDispatch();
-  // const handleBookSubmit = (e) => {
-  //   e.preventDefault();
-  //   const title = e.target.previousElementSibling.previousElementSibling.value;
-  //   const category = e.target.previousElementSibling.value;
-  //   dispatch(addBook({ title, category }));
-  // };
+  const dispatch = useDispatch();
+  const handleBookSubmit = (e) => {
+    e.preventDefault();
+    const title = e.target.previousElementSibling.previousElementSibling.value;
+    const category = e.target.previousElementSibling.value;
+    const id = Date.now();
+    if (title === '' || category === '') return;
+    dispatch(addBook({ title, category, item_id: id }));
+  };
   return (
     <>
       <div className="book-list">
@@ -20,6 +23,7 @@ const Books = () => {
             written by
             {' '}
             {book.author}
+            <button type="button" onClick={() => dispatch(removeBook(book.item_id))}>Remove</button>
           </p>
         )) }
       </div>
@@ -34,7 +38,7 @@ const Books = () => {
             <option value="Science fiction">Science fiction</option>
             <option value="Economy">Economy</option>
           </select>
-          <button type="submit">ADD BOOK</button>
+          <button type="submit" onClick={handleBookSubmit}>ADD BOOK</button>
         </form>
       </div>
     </>
