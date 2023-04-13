@@ -4,7 +4,7 @@ import axios from 'axios';
 const initialState = {
   books: [],
   isLoading: false,
-  error: '',
+  error: null,
 };
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/wdqc1xKIWcb9e5ljNxvD/books';
 
@@ -22,35 +22,50 @@ export const getBooks = createAsyncThunk('books/getBooks', async () => {
   return null;
 });
 
+export const addNewBook = createAsyncThunk('books/addNewBook', async (book) => {
+  try {
+    const res = await axios.post(url, book);
+    console.log(res.data);
+    return book;
+  } catch (error) {
+    console.log(error);
+  }
+  return null;
+});
+
+export const removeBook = createAsyncThunk('books/deleteBook', async (id) => {
+  try {
+    const res = await axios.delete(`${url}/${id}`);
+    console.log(res.data);
+    return id;
+  } catch (error) {
+    console.log(error);
+  }
+  return null;
+});
+
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => ({
-      ...state,
-      books: [...state.books, action.payload],
-    }),
-    removeBook: (state, action) => ({
-      ...state,
-      books: state.books.filter((book) => book.item_id !== action.payload),
-    }),
-  },
   extraReducers: (builder) => {
     builder
       .addCase(getBooks.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getBooks.fulfilled, (state, action) => {
-        // console.log(action);
         state.isLoading = false;
         state.books = action.payload;
       })
-      .addCase(getBooks.rejected, (state, action) => {
-        console.log(action);
+      .addCase(getBooks.rejected, (state) => {
         state.isLoading = false;
+      })
+      .addCase(addNewBook.fulfilled, (state, action) => {
+        state.books = [...state.books, action.payload];
+      })
+      .addCase(removeBook.fulfilled, (state, action) => {
+        state.books = state.books.filter((book) => book.item_id !== action.payload);
       });
   },
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
 export default booksSlice.reducer;
