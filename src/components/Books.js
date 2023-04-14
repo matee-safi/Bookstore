@@ -1,30 +1,46 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook, addBook } from '../redux/books/booksSlice';
+import { removeBook, addNewBook, getBooks } from '../redux/books/booksSlice';
 
 const Books = () => {
-  const books = useSelector((state) => state.books.books);
+  const { books, isLoading } = useSelector((state) => state.books);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
+
   const handleBookSubmit = (e) => {
     e.preventDefault();
     const title = e.target.previousElementSibling.previousElementSibling.value;
     const category = e.target.previousElementSibling.value;
     const id = Date.now();
+    const author = 'Unknown';
     if (title === '' || category === '') return;
-    dispatch(addBook({ title, category, item_id: id }));
+    dispatch(addNewBook({
+      title, author, category, item_id: id,
+    }));
+    e.target.previousElementSibling.previousElementSibling.value = '';
+    e.target.previousElementSibling.value = '';
   };
   return (
     <>
       <div className="book-list">
-        { books && books.map((book) => (
+        {isLoading && <p>Loading...</p>}
+        {
+        books && books.map((book) => (
           <p key={book.item_id}>
             {book.title}
             {' '}
-            written by
+            -
             {' '}
-            {book.author}
+            {book.category}
+            <br />
             <button type="button" onClick={() => dispatch(removeBook(book.item_id))}>Remove</button>
           </p>
-        )) }
+        ))
+        }
+        {books === null && <p>No books yet</p>}
       </div>
       <hr />
       <div className="add-book">
