@@ -184,7 +184,8 @@ If you like this project please leave a star
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for making this possible!
+<p>I would like to thank Microverse for making this possible!</p>
+<a href="https://www.flaticon.com/free-icons/library" title="library icons">Library icons created by Freepik - Flaticon</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
