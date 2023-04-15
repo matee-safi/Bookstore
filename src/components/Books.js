@@ -26,7 +26,7 @@ const Books = () => {
   return (
     <>
       <div className="book-list mx-16 mt-10">
-        {isLoading && <p className="text-3xl text-gray-400 text-center my-20">Loading...</p>}
+        {isLoading && <p className="text-3xl text-gray-400 text-center my-15">Loading...</p>}
         {
         books && books.map((book) => (
           <div key={book.item_id} className="border m-5 p-5 font-secondary bg-white flex justify-between items-center  rounded">
@@ -63,7 +63,7 @@ const Books = () => {
           </div>
         ))
         }
-        {books === null && <p>No books yet</p>}
+        {books === null && <p className="text-3xl text-gray-400 text-center my-15">Bookstore is empty</p>}
       </div>
       <hr className="mx-20 mt-12 mb-8" />
       <div className="add-book px-5 mx-16 font-primary">

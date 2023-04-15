@@ -1,5 +1,5 @@
 const Categories = () => (
-  <button type="button" className="check-btn">Check status</button>
+  <button type="button" className="btn text-3xl bg-primary-200 my-20 text-white rounded py-1 px-6 ml-20 float-center">Check status</button>
 );
 
 export default Categories;
