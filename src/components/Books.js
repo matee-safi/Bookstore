@@ -68,15 +68,15 @@ const Books = () => {
       <hr className="mx-20 mt-12 mb-8" />
       <div className="add-book px-5 mx-16 font-primary">
         <h2 className="mb-5 text-2xl font-bold text-secondary-200">Add new book</h2>
-        <form className="w-full">
-          <input className="w-3/5 p-3 rounded border w-200" type="text" placeholder="Book title" required />
-          <select className="mx-6 p-3 rounded w-1/5" name="category" id="category" defaultValue="">
+        <form className="grid grid-cols-10 gap-8">
+          <input className="p-3 rounded border col-span-5" type="text" placeholder="Book title" required />
+          <select className="bg-white border p-3 rounded col-span-3" name="category" id="category" defaultValue="">
             <option value="" disabled className="text-gray-500">Category</option>
             <option value="Action">Action</option>
             <option value="Science fiction">Science fiction</option>
             <option value="Economy">Economy</option>
           </select>
-          <button className="font-secondary font-bold bg-primary-200 text-white px-10 py-2 rounded" type="submit" onClick={handleBookSubmit}>ADD BOOK</button>
+          <button className="col-span-2 font-secondary font-bold bg-primary-200 text-white px-10 py-2 rounded" type="submit" onClick={handleBookSubmit}>ADD BOOK</button>
         </form>
       </div>
     </>

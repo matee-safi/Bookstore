@@ -15,10 +15,6 @@ module.exports = {
           200: '#888',
         },
       },
-      fontFamily: {
-        primary: ['Montserrat'],
-        secondary: ['RobotoSlab'],
-      },
     },
   },
   plugins: [],
