@@ -26,7 +26,7 @@ const Books = () => {
   return (
     <>
       <div className="book-list mx-16 mt-10">
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <p className="text-3xl text-gray-400 text-center my-20">Loading...</p>}
         {
         books && books.map((book) => (
           <div key={book.item_id} className="border m-5 p-5 font-secondary bg-white flex justify-between items-center  rounded">
