@@ -57,7 +57,7 @@ const Books = () => {
               <div className="mr-20">
                 <p className="uppercase text-secondary-100">current chapter</p>
                 <p className="text-lg">Chapter 17</p>
-                <button type="button" className="btn btn-blue bg-primary-200 text-gray-200 uppercase mt-4 px-6 py-1 rounded">update progress</button>
+                <button type="button" className="btn btn-blue bg-primary-200 text-gray-200 uppercase mt-4 px-8 py-1 rounded">update progress</button>
               </div>
             </div>
           </div>
