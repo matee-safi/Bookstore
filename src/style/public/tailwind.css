@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* stylelint-disable-next-line function-no-unknown */
-
 /* stylelint-disable */
 
 /* ! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com */
@@ -776,6 +774,14 @@ video {
   padding-right: 4rem;
 }
 
+.font-primary{
+  font-family: Montserrat, sans-serif;
+}
+
+.font-secondary{
+  font-family: Roboto Slab, sans-serif;
+}
+
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
@@ -908,4 +914,10 @@ code {
 .active\:text-black:active{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px){
+  .lg\:grid-cols-10{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
 }

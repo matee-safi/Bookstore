@@ -15,6 +15,10 @@ module.exports = {
           200: '#888',
         },
       },
+      fontFamily: {
+        primary: ['Montserrat', 'sans-serif'],
+        secondary: ['Roboto Slab', 'sans-serif'],
+      },
     },
   },
   plugins: [],
