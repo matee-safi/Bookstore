@@ -2,6 +2,8 @@
 
 /* stylelint-disable-next-line function-no-unknown */
 
+/* stylelint-disable */
+
 /* ! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com */
 
 /*
@@ -841,6 +843,8 @@ video {
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+
+/* stylelint-enable */
 
 body {
   padding: 8% 5%;
